@@ -1,17 +1,6 @@
 
 
-matcherController = {
 
-  init: function( size ) {
-
-  },
-};
-
-matcherView = {
-  updateGameView: function( args ) {
-
-  },
-};
 
 
 
