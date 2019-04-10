@@ -2,10 +2,56 @@
 <DOCTYPE html>
 <html>
   <head>
-    <script src=""></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="cardmatcher.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Concentration</title>
   </head>
   <body>
+  <div class="game-info-container">
+
+    <div class="section">
+      Pick an even number and start game.
+      <div id="game-state-info">
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="num-guesses">
+        Num guesses:
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="num-guesses">
+        Num guesses:
+      </div>
+    </div>
+  
+    <div class="section">
+      <div id="num-guesses">
+        Num guesses:
+      </div>
+    </div>
+
+  </div>
+
+  <form>
+    <br>
+    <label for="grid-size">Grid size</label>
+    <br>
+    <input type="text" name="grid-size" id="grid-size">
+    <br>
+    <input type="submit" value="Pick a size" id="grid-size-button">
+    <br>
+  </form>
+
+  <div class="grid-container">
+    <div id="matcher-grid">
+
+    </div>
+  </div>
+ 
   </body>
 </html>
 
