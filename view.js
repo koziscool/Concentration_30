@@ -17,7 +17,7 @@ matcherView = {
     console.log('koz');
     for( var i = 0; i < this.model.cards.length; i++ ){
       var card = this.model.cards[i];
-      var $cardDiv = $("<div><div class='name'>" + card.id + "</div></div>");
+      var $cardDiv = $("<div><div class='name'>" + card.value + "</div></div>");
       $cardDiv.addClass("card");
       $cardDiv.attr("id", "card-" + card.id );
       $cardDiv.data("card-id", card.id );
@@ -35,6 +35,19 @@ matcherView = {
   updateGameView: function( args ) {
 
   },
+
+  revealCard: function(id){
+    $("#card-" + id).addClass("revealed");
+  },
+
+  setCorrect: function(id){
+    $("#card-" + id).addClass("correct");
+  },
+
+  hideCards: function(){
+    $(".card").not(".correct").removeClass("revealed");
+  },
+
 
 };
 

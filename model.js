@@ -6,6 +6,8 @@ matcherModel = {
 
   currentId: 1,
   
+  selectedCard: null,
+
   totalCards: 0,
 
 
@@ -46,6 +48,42 @@ matcherModel = {
       this.cards[rand] = temp;
     }
   },
+
+  selectedSameCard: function(id){
+    return this.selectedCard && this.selectedCard.id === id;
+  },
+
+  getCard(id){
+    for( i = 0; i < this.cards.length; i++ ){
+      if( this.cards[i].id === id ) return this.cards[i];
+    }
+    return null;
+  },
+
+  setSelectedCard(id){
+    this.selectedCard = this.getCard(id);
+  },
+
+  checkGuess: function(id){
+    this.numGuesses++;
+    var isCorrect = false;
+    var guessCard = this.getCard(id);
+
+    if( this.selectedCard && guessCard && this.selectedCard.value === guessCard.value ) {
+      isCorrect = true;
+      this.matchedCards += 2;
+    }
+
+    this.selectedCard = null;
+
+    if( this.matchedCards >= this.totalCards )
+      this.gameStateText = "Congratulations, you win";
+
+    return isCorrect;
+
+  },
+
+
 
 };
 
