@@ -11,7 +11,7 @@ matcherModel = {
 
   init: function( size ){
     this.size = size || this.size;
-    var numPairs = Math.pow( this.size, 2 );
+    var numPairs = Math.pow( this.size, 2 ) / 2;
     for( var i = 0; i < numPairs ; i++ ) this.addPair();
     this.shuffle();
   },
