@@ -9,7 +9,9 @@ matcherModel = {
   selectedCard: null,
 
   totalCards: 0,
-
+  numGuesses: 0,
+  matchedCards: 0,
+  gameStateText: "You haven't won yet, pick two cards",
 
   init: function( size ){
     this.size = size || this.size;
